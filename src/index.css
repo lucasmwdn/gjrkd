@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "GmarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GmarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GmarketSans";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: 600 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "GmarketSans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "GmarketSans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "GmarketSans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  :root,
+  html,
+  body,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: "GmarketSans", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    word-break: keep-all;
+  }
+}
+
+.font-display {
+  font-family: "GmarketSans", sans-serif;
+}
+
+.font-mono-num {
+  font-family: "GmarketSans", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes cta-shimmer {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+  }
+  45%, 100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+@keyframes cta-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.34), 0 0 0 0 rgba(59, 130, 246, 0.28);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.5), 0 0 0 5px rgba(59, 130, 246, 0.08);
+  }
+}
+
+.btn-cta-glow {
+  animation: cta-pulse-glow 2.8s ease-in-out infinite;
+}
+
+.btn-cta-shimmer {
+  animation: cta-shimmer 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
